@@ -2,7 +2,7 @@ clc
 clear all
 close all
 global nameVectorVar; nameVectorVar='ke';
-global vectorVar; vectorVar=[3,3.5,4,20];
+global vectorVar; vectorVar=[0.01,0.15,0.17];
 global phitol; phitol=0.0001;
 global phiend; phiend=10.0;
 global zlim; zlim=10.0;
@@ -13,24 +13,35 @@ function S = func_S(k,phi)
 global vectorVar;
 vv=vectorVar(k);
 
-
-
-%//////////////////// This is the start of the function////////////////////////
+%//////////////////// This is the start of the function////////////////////
 
 U1=0;
 U2=0;
 eta1=0.5;
 eta2=0.5;
-M=1.1;
+M=1.4;
 
-%/////////////////////////////////////////////////////////////////////////
+%//////////////////////////////////////////////////////////////////////////
+
 
 S=real((eta1*((M-U1)^2)*(1-(1-((2*phi)/(M-U1)^2))^0.5)) ...
 +    (eta2*((M-U2)^2)*(1-(1-((2*phi)/(M-U2)^2))^0.5)) ...
-+ (1-(1-((phi)/(vv-1.5)))^(1.5-vv)));
++ 1+3*(4*vv/(1+3*vv))-(1+3*(4*vv/(1+3*vv))*(1-phi)...
++(4*vv/(1+3*vv))*(phi)^2)*exp(phi));
 
-%//////////////////// This is the end of the function////////////////////////
 
+%//////////////////// This is the end of the function//////////////////////
+
+%%%%%%%%%%%%%%%%%%%%%% Old - Functions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% U1=0;
+% U2=0;
+% eta1=0.5;
+% eta2=0.5;
+% M=1.1;
+% S=real((eta1*((M-U1)^2)*(1-(1-((2*phi)/(M-U1)^2))^0.5)) ...
+% +    (eta2*((M-U2)^2)*(1-(1-((2*phi)/(M-U2)^2))^0.5)) ...
+% + (1-(1-((phi)/(vv-1.5)))^(1.5-vv)));
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 end
@@ -41,8 +52,7 @@ end
 
 
 
-
-%% . NOTHING BEYOND THIS POINT SHOULD BE CHANGED
+%%% . NOTHING BEYOND THIS POINT SHOULD BE CHANGED
 
 
 

@@ -4,23 +4,24 @@ close all
 global nameVectorVar; nameVectorVar='ke';
 global vectorVar; vectorVar=[3,3.5,4,20];
 global phitol; phitol=0.0001;
-global phiend; phiend=0.6;
+global phiend; phiend=10.0;
 global zlim; zlim=10.0;
 global ztol; ztol=0.01;
 main();
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function S = func_S(k,phi)
 global vectorVar;
+vv=vectorVar(k);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-global U1; U1 = 0;
-global U2; U2=0;
-global eta1; eta1=0.5;
-global eta2; eta2=0.5;
-global M; M=1.1;
+U1=0;
+U2=0;
+eta1=0.5;
+eta2=0.5;
+M=1.1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    S=real((eta1*((M-U1)^2)*(1-(1-((2*phi)/(M-U1)^2))^0.5)) ...
+S=real((eta1*((M-U1)^2)*(1-(1-((2*phi)/(M-U1)^2))^0.5)) ...
 +    (eta2*((M-U2)^2)*(1-(1-((2*phi)/(M-U2)^2))^0.5)) ...
-+ (1-(1-((phi)/(vectorVar(k)-1.5)))^(1.5-vectorVar(k))));
++ (1-(1-((phi)/(vv-1.5)))^(1.5-vv)));
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

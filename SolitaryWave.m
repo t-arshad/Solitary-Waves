@@ -3,13 +3,14 @@ clear all
 close all
 global nameVectorVar; nameVectorVar='ke';
 global vectorVar; vectorVar=[0.01];
-global phitol; phitol=0.0001;
+global phitol; phitol=0.01;
 global phiend; phiend=10.0;
 global xilim; xilim=20.0;
 global xitol; xitol=0.01;
 global fontandaxessize;fontandaxessize=50;
-global linewidth;linewidth=2;
+global linewidth;linewidth=3;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 if exist('OCTAVE_VERSION', 'builtin') ~= 0
 set(0, 'DefaultAxesFontSize', fontandaxessize)
 end
@@ -83,16 +84,15 @@ for k=1:size(vectorVar,2)
 [phiplot,Splot]=S_plot(k);
 [z,phi,E] = phi_E(k);
 
-
 hold on
 figure(1)
 plot(phiplot,Splot,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
 xlabel('\phi')
 ylabel('V(\phi)')
 title('V(\phi) Plot')
+if(size(vectorVar,2)>1)
 legend show
-% legend(Legend)
-
+end
 
 hold on
 figure(2)
@@ -100,9 +100,9 @@ plot(z,phi,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'line
 xlabel('\xi')
 ylabel('\phi')
 title('Phi Plot')
+if(size(vectorVar,2)>1)
 legend show
-% legend(Legend)
-
+end
 
 hold on
 figure(3)
@@ -110,9 +110,9 @@ plot(z,E,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewi
 xlabel('\xi')
 ylabel('E')
 title('Energy Plot')
+if(size(vectorVar,2)>1)
 legend show
-% legend(Legend)
-
+end
 
 end
 

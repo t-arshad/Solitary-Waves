@@ -87,9 +87,9 @@ for k=1:size(vectorVar,2)
 hold on
 figure(1)
 plot(phiplot,Splot,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
-xlabel('Phi')
-ylabel('S')
-title('S Plot')
+xlabel('\phi')
+ylabel('V(\phi)')
+title('V(\phi) Plot')
 legend show
 % legend(Legend)
 
@@ -97,8 +97,8 @@ legend show
 hold on
 figure(2)
 plot(z,phi,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
-xlabel('Xi')
-ylabel('Phi')
+xlabel('\xi')
+ylabel('\phi')
 title('Phi Plot')
 legend show
 % legend(Legend)
@@ -107,9 +107,9 @@ legend show
 hold on
 figure(3)
 plot(z,E,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
-xlabel('Xi')
+xlabel('\xi')
 ylabel('E')
-title('E Plot')
+title('Energy Plot')
 legend show
 % legend(Legend)
 

@@ -192,17 +192,17 @@ if(size(vectorVar,2)>1&&!comparewithanalytical)
 legend show
 end
 
-figure(5)
-hold on
-plot(z,abs(E-E_an)./E,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
-xlabel('\xi')
-ylabel('E Error')
-title('Energy Error Plot')
+%figure(5)
+%hold on
+%plot(z,abs(E-E_an)./E,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
+%xlabel('\xi')
+%ylabel('E Error')
+%title('Energy Error Plot')
 %mask = E ~= 0;
 %disp(['Max error in Energy: ' num2str(max(abs(E(mask)-E_an(mask))./E(mask))*100) ' %'])
-if(size(vectorVar,2)>1&&!comparewithanalytical)
-legend show
-end
+%if(size(vectorVar,2)>1&&!comparewithanalytical)
+%legend show
+%end
 
 end
 

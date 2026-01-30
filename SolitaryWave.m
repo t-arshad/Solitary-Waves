@@ -4,7 +4,7 @@ close all
 global nameVectorVar; nameVectorVar='ke';
 global vectorVar; vectorVar=[0.01];
 global phitol; phitol=0.001;
-global phiend; phiend=1;
+global phiend; phiend=10;
 global xilim; xilim=20.0;
 global xitol; xitol=0.001;
 global fontandaxessize;fontandaxessize=50;
@@ -42,7 +42,7 @@ r4=1.0/(2.0*n);
 fn=(beta((zeta-r3),r3))/(beta((zeta-r4),r4));
 cn=gamma(zeta)/(2*(gamma(1+r4))*(gamma(zeta-r4)));
 a1=2*zeta*fn*cn*beta((zeta+r4),(1-r4));
-a2=-(fn^2)*cn*beta((zeta+r3),(1-r3));
+a2=-(fn^2)*cn*zeta*beta((zeta+r3),(1-r3));
 T1=-(0.5*a1)*(r2);
 T2=(1.0/3.0)*((r1*a1^2)-(a2*r2));
 S=(1.0/(Kx*Kx))*(T1*phi^2+T2*phi^3);

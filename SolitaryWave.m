@@ -140,7 +140,9 @@ end
 for k=1:kend
 [phiplot,Splot]=S_plot(k);
 [z,phi,E] = phi_E(k);
+if(comparewithanalytical)
 [V_an,E_an]=analytic_solution(z);
+end
 
 figure(1)
 hold on

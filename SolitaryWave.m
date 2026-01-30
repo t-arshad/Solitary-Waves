@@ -4,7 +4,7 @@ close all
 global nameVectorVar; nameVectorVar='ke';
 global vectorVar; vectorVar=[0.01];
 global phitol; phitol=0.001;
-global phiend; phiend=10;
+global phiend; phiend=1e3;
 global xilim; xilim=20.0;
 global xitol; xitol=0.001;
 global fontandaxessize;fontandaxessize=50;
@@ -15,7 +15,7 @@ global comparewithanalytical;comparewithanalytical=1;
 global Ma;Ma=0.4;
 global Kz;Kz=0.5;
 global Kx;Kx=0.866;
-global zeta;zeta=1;
+global zeta;zeta=3;
 global n;n=2;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

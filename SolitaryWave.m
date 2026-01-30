@@ -15,7 +15,7 @@ global comparewithanalytical;comparewithanalytical=1;
 global Ma;Ma=0.4;
 global Kz;Kz=0.5;
 global Kx;Kx=0.866;
-global zeta;zeta=3;
+global zeta;zeta=1;
 global n;n=2;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

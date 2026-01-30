@@ -9,7 +9,7 @@ global xilim; xilim=20.0;
 global xitol; xitol=0.001;
 global fontandaxessize;fontandaxessize=50;
 global linewidth;linewidth=3;
-global comparewithanalytical;comparewithanalytical=0;
+global comparewithanalytical;comparewithanalytical=1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%% ANY GLOBAL VARIABLES %%%%%%%%%%%%
 global Ma;Ma=0.4;
@@ -187,7 +187,7 @@ plot(z,abs(phi-V_an)./phi,'DisplayName',strcat(nameVectorVar,'= ', num2str(vecto
 xlabel('\xi')
 ylabel('\phi Error')
 title('Phi Error Plot')
-disp(['Max error in φ: ' num2str(max(abs(phi-V_an))*100) ' %'])
+disp(['Max error in φ: ' num2str(max(abs(phi-V_an)./phi)*100) ' %'])
 if(size(vectorVar,2)>1&&!comparewithanalytical)
 legend show
 end
@@ -196,9 +196,10 @@ figure(5)
 hold on
 plot(z,abs(E-E_an)./E,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
 xlabel('\xi')
-ylabel('\E Error')
+ylabel('E Error')
 title('Energy Error Plot')
-disp(['Max error in Energy: ' num2str(max(abs(E-E_an))*100) ' %'])
+%mask = E ~= 0;
+%disp(['Max error in Energy: ' num2str(max(abs(E(mask)-E_an(mask))./E(mask))*100) ' %'])
 if(size(vectorVar,2)>1&&!comparewithanalytical)
 legend show
 end

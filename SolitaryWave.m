@@ -158,7 +158,10 @@ figure(2)
 hold on
 plot(z,phi,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
 if (comparewithanalytical)
-plot(z,V_an,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
+clf
+hold on
+plot(z,phi,'-o','DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
+plot(z,V_an,'-x','DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
 legend('Numerical','Analytical')
 end
 xlabel('\xi')
@@ -172,7 +175,10 @@ figure(3)
 hold on
 plot(z,E,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
 if (comparewithanalytical)
-plot(z,E_an,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
+clf
+hold on
+plot(z,E,'-o','DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
+plot(z,E_an,'-x','DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k))),'linewidth',linewidth)
 legend('Numerical','Analytical')
 end
 xlabel('\xi')

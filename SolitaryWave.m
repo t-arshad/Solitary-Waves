@@ -150,7 +150,7 @@ plot(phiplot,Splot,'DisplayName',strcat(nameVectorVar,'= ', num2str(vectorVar(k)
 xlabel('\phi')
 ylabel('V(\phi)')
 title('V(\phi) Plot')
-if(size(vectorVar,2)>1&&!comparewithanalytical)
+if(size(vectorVar,2)>1&&~comparewithanalytical)
 legend show
 end
 
@@ -167,7 +167,7 @@ end
 xlabel('\xi')
 ylabel('\phi')
 title('Phi Plot')
-if(size(vectorVar,2)>1&&!comparewithanalytical)
+if(size(vectorVar,2)>1&&~comparewithanalytical)
 legend show
 end
 
@@ -184,7 +184,7 @@ end
 xlabel('\xi')
 ylabel('E')
 title('Energy Plot')
-if(size(vectorVar,2)>1&&!comparewithanalytical)
+if(size(vectorVar,2)>1&&~comparewithanalytical)
 legend show
 end
 
@@ -196,7 +196,7 @@ xlabel('\xi')
 ylabel('\phi Error')
 title('Phi Error Plot')
 disp(['Max error in φ: ' num2str(max(abs(phi-V_an)./phi)*100) ' %'])
-if(size(vectorVar,2)>1&&!comparewithanalytical)
+if(size(vectorVar,2)>1&&~comparewithanalytical)
 legend show
 end
 

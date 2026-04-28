@@ -3,21 +3,21 @@ clear all
 close all
 global nameVectorVar; nameVectorVar='ke';
 global vectorVar; vectorVar=[0.01];
-global phitol; phitol=0.001;
+global phitol; phitol=0.0001;
 global phiend; phiend=1e3;
 global xilim; xilim=20.0;
-global xitol; xitol=0.001;
+global xitol; xitol=0.00001;
 global fontandaxessize;fontandaxessize=50;
 global linewidth;linewidth=3;
 global comparewithanalytical;comparewithanalytical=1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%% ANY GLOBAL VARIABLES %%%%%%%%%%%%
-global Ma;Ma=0.4;
+global Ma;Ma=0.45;
 global Kz;Kz=0.5;
 global Kx;Kx=0.866;
-global zeta;zeta=1;
 global n;n=2;
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+global zeta;zeta=2;
+%%%%%%%%%%%%%%%%%.%%%%%%%%%%%%%%%%%%%%%%
 
 if exist('OCTAVE_VERSION', 'builtin') ~= 0
 set(0, 'DefaultAxesFontSize', fontandaxessize)
@@ -196,6 +196,7 @@ xlabel('\xi')
 ylabel('\phi Error')
 title('Phi Error Plot')
 disp(['Max error in φ: ' num2str(max(abs(phi-V_an)./phi)*100) ' %'])
+disp(['Max value of phi: ' num2str(max(abs(V_an)))])
 if(size(vectorVar,2)>1&&~comparewithanalytical)
 legend show
 end
